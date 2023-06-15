@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <div class="col-12 mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">Edit Category </h4>
+                <p class="text-muted font-14 mb-4">Update the Category details.</p>
+                <form method="post" action="{% url 'category_update' dataid=data.id %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <label for="example-text-input" class="col-sm-2 col-form-label">Category Name</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" placeholder="Enter Category Name" name="category" value="{{data.Categoryname}}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-2 col-form-label">Description</label>
+                        <div class="col-sm-10">
+                            <textarea rows="5" cols="5" class="form-control" placeholder="Describe the category" name="description">{{data.Description}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Upload File</label>
+                        <div class="col-sm-10">
+                            <img src="{{data.Image.url}}" alt="" width="100px" height="100px">
+                            <input type="file" class="form-control" name="categoryimage">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 col-form-label"></label>
+                        <button type="submit" class="btn btn-outline-dark mb-3 col-sm-2">Update</button>
+                    </div>
+                </form>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

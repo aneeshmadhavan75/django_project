@@ -1,0 +1,96 @@
+*{
+    font-family: 'poppins', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    background-image: linear-gradient(#c72c41,#510a32);
+    /* background-image: url("hillskv.jpg"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}   
+.div1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    
+}
+.container{
+    width:400px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 0 15px;
+    
+}
+p{
+    font-size: 30px;
+    font-weight: bold;
+    justify-content: center;
+    display: flex;
+    padding-top: 10px;
+    color: #e8aab3;
+}
+/* .input-field{
+    height: 60px;
+    width: 95%;
+    border: none;
+    /* border-radius: 30px; */
+    /* color: #fff; */
+    /* font-size: 15px; */
+    /* padding: 30px 0 0 45px; */
+    /* background: rgba(255,255,255,0.1); */
+    /* outline: none; */
+    /* margin-bottom: 20px; */
+/* } */
+input{
+    height: 45px;
+    width: 87%;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 15px;
+    padding: 12px 45px;
+    background: rgba(255,255,255,0.1);
+    outline: none;
+    margin-bottom: 20px;
+    align-content: center;
+    margin-left: 20px;
+
+}
+input:hover{
+    background: rgba(255,255,255,0.2);
+}
+button{
+    height: 45px;
+    width: 87%;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.1);
+    color: #e8aab3;
+    margin-left: 20px;
+}
+button:hover{ 
+    background: rgba(255,255,255,0.2);
+}
+.forgot{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 20px;
+}
+/* .forgot label{
+    text-align: center;
+    width: 100%;   
+} */
+a{
+    color: #e8aab3;
+    text-align: center;
+    width: 100%; 
+    padding-right: 124px;
+}
+input::placeholder{
+    color: #d76b7a;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+</head>
+<body>
+    <div class="col-12 mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title">Details Of Category</h4>
+                <div class="single-table">
+                    <div class="table-responsive">
+                        <table class="table table-hover progress-table text-center">
+                            <thead class="text-uppercase">
+                                <tr>
+                                    <th>Picture</th>
+                                    <th>Category Name</th>
+                                    <th>Description</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for c in data %}
+                                <tr>
+                                    <td>
+                                        <img src="{{c.Image.url}}" alt="" width="100px" height="100px">
+                                    </td>
+                                    <td>{{c.Categoryname}}</td>
+                                    <td>{{c.Description}}</td>
+                                    <td>
+                                        <form action="{% url 'category_edit' dataid=c.id %}">
+                                            <button class="btn btn-success waves-effect waves-light" type="submit" style="border-radius: 10px;">Edit</button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="{% url 'category_del' dataid=c.id %}">
+                                            <button class="btn btn-danger waves-effect waves-light" type="submit" style="border-radius: 10px;">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        {% if messages %}
+            {% for i in messages %}
+                {% if i.tags == 'add_message' %}
+                    <script>
+                        swal('{{i}}', 'add_message')
+                    </script>
+                {% elif i.tags == 'error' %}
+                    <script>
+                        swal('{{i}}', 'error')
+                    </script>
+                {% else %}
+                    <script>
+                        swal('{{i}}', 'Get back to work, dumbass <3')
+                    </script>
+                {% endif %}
+            {% endfor %}
+        {% endif %}    
+
+</body>
+</html>
+{% endblock %}
